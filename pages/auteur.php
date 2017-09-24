@@ -2,7 +2,7 @@
 include('pages/templates/try.php')
 ?>
 <?php
-$reponse = $bdd->query('SELECT * FROM possession');
+$reponse = $bdd->query('SELECT * FROM possession ORDER BY auteur ASC');
 ?>
 
 <div class="container">
