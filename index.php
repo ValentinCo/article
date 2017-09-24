@@ -33,6 +33,9 @@ if($p === 'reference'){
 if($p === 'auteur'){
     include('./pages/auteur.php');
 }
+if($p === 'recherche'){
+    include('./pages/recherche.php');
+}
 $content = ob_get_clean();
 include('./pages/templates/default.php');
 ?>
