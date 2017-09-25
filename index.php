@@ -21,6 +21,9 @@ if($p === 'details'){
 if($p === 'recherche'){
     include('./pages/recherche.php');
 }
+if($p === 'moderation'){
+    include('./pages/moderation.php');
+}
 $content = ob_get_clean();
 include('./pages/templates/default.php');
 ?>
