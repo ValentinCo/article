@@ -5,8 +5,8 @@ include('pages/templates/try.php')
 <?php
 $search = $_POST['search'];
 
-$sql= sprintf("SELECT * FROM possession 
-WHERE titre LIKE  '%%%s%%' OR genre LIKE '%%%s%%' OR  annee LIKE '%%%s%%' OR auteur LIKE '%%%s%%' OR studio LIKE '%%%s%%'",$search, $search, $search, $search, $search);
+$sql= sprintf("SELECT * FROM Books 
+WHERE boo_title LIKE  '%%%s%%'",$search);
 
 $reponse= $bdd->query($sql);
 
@@ -31,11 +31,11 @@ $reponse= $bdd->query($sql);
 
 while($donnees = $reponse->fetch()){
     ?>
-<td><?=$donnees['pos_oid']?> </td>
-<td><a href=""><?=$donnees['titre']?></a></td>
-<td><?=$donnees['genre']?> </td>
-<td><?=$donnees['annee']?> </td>
-<td><?=$donnees['auteur']?> </td>
+<td><?=$donnees['boo_id']?> </td>
+<td><a href=""><?=$donnees['boo_title']?></a></td>
+<td><?=$donnees['boo_type']?> </td>
+<td><?=$donnees['boo_date']?> </td>
+<td><?=$donnees['boo_author']?> </td>
 </tr>
 </tbody>
 
