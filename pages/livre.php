@@ -5,15 +5,13 @@ include('pages/templates/try.php')
 ?>
 <?php
 $test = "";
-if(!empty($_GET['search'])){
-    $test = " WHERE titre LIKE '".$_GET['search']."'";
-}
+
 if(!empty($_GET['tri'])){
     $test = " order by " .$_GET['tri'];
 }
 
 
-$reponse = $bdd->query("SELECT * FROM possession". $test);
+$reponse = $bdd->query("SELECT * FROM Books". $test);
 ?>
 
 <div class="container">
@@ -21,11 +19,11 @@ $reponse = $bdd->query("SELECT * FROM possession". $test);
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th><a href="?p=livre&tri=pos_oid">Référence</a></th>
-        <th><a href="?p=livre&tri=titre">Titre</a></th>
-        <th><a href="?p=livre&tri=genre">Genre</a></th>
-        <th><a href="?p=livre&tri=annee">Date</a></th>
-        <th><a href="?p=livre&tri=auteur">Auteur</a></th>        
+        <th><a href="?p=livre&tri=boo_id">Référence</a></th>
+        <th><a href="?p=livre&tri=boo_author">Titre</a></th>
+        <th><a href="?p=livre&tri=boo_type">Genre</a></th>
+        <th><a href="?p=livre&tri=boo_date">Date</a></th>
+        <th><a href="?p=livre&tri=boo_title">Auteur</a></th>        
     </tr>
     </thead>
 
@@ -36,11 +34,11 @@ while  ($donnees = $reponse->fetch()){
     
 ?>
 <p>
-<td><?=$donnees['pos_oid']?> </td>
-<td><a href=""><?=$donnees['titre']?></a></td>
-<td><?=$donnees['genre']?> </td>
-<td><?=$donnees['annee']?> </td>
-<td><?=$donnees['auteur']?> </td>
+<td><?=$donnees['boo_id']?> </td>
+<td><a href=""><?=$donnees['boo_author']?></a></td>
+<td><?=$donnees['boo_type']?> </td>
+<td><?=$donnees['boo_date']?> </td>
+<td><?=$donnees['boo_title']?> </td>
 </tr>
 </tbody>
 
