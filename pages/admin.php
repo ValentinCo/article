@@ -11,7 +11,6 @@
         $response = $bdd->query($sql);
         $row = $response->fetch();
         if($password === $row['use_password']) {
-            session_start();
             $_SESSION['use_name'] = $pseudo;
             $_SESSION['use_id'] = $row['use_id'];
             ?>
