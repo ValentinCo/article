@@ -1,27 +1,39 @@
 <?php
 include('pages/templates/try.php')
+
+
 ?>
 <?php
-$reponse = $bdd->query('SELECT * FROM possession');
+$test = "";
+if(!empty($_GET['search'])){
+    $test = " WHERE titre LIKE '".$_GET['search']."'";
+}
+if(!empty($_GET['tri'])){
+    $test = " order by " .$_GET['tri'];
+}
+
+
+$reponse = $bdd->query("SELECT * FROM possession". $test);
 ?>
 
 <div class="container">
-         
-  <table class="table table-bordered">
+
+<table class="table table-bordered">
     <thead>
-      <tr>
-        <th><a href="?p=reference">Référence</a></th>
-        <th><a href="?p=titre">Titre</a></th>
-        <th><a href="?p=genre">Genre</a></th>
-        <th><a href="?p=date">Date</a></th>
-        <th><a href="?p=auteur">Auteur</a></th>        
-      </tr>
+    <tr>
+        <th><a href="?p=livre&tri=pos_oid">Référence</a></th>
+        <th><a href="?p=livre&tri=titre">Titre</a></th>
+        <th><a href="?p=livre&tri=genre">Genre</a></th>
+        <th><a href="?p=livre&tri=annee">Date</a></th>
+        <th><a href="?p=livre&tri=auteur">Auteur</a></th>        
+    </tr>
     </thead>
 
     <h1 class="text-center">Biblio media</h1>
     <p class="text-center">_____________</p>
 <?php
 while  ($donnees = $reponse->fetch()){
+    
 ?>
 <p>
 <td><?=$donnees['pos_oid']?> </td>
@@ -35,7 +47,6 @@ while  ($donnees = $reponse->fetch()){
 
     <?php
 }
-
 
 $reponse->closeCursor();
 ?>

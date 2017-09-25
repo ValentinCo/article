@@ -12,7 +12,7 @@
         <div class="input-group">
             <input name="search" type="text" class="form-control" placeholder="Recherche" required>
             <div class="input-group-btn">
-                <button  class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                <button  class="btn btn-default"   type="submit"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </div>
         </form>

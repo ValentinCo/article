@@ -18,21 +18,6 @@ if($p === 'admin'){
 if($p === 'details'){
     include('./pages/details.php');
 }
-if($p === 'titre'){
-    include('./pages/titre.php');
-}
-if($p === 'genre'){
-    include('./pages/genre.php');
-}
-if($p === 'date'){
-    include('./pages/date.php');
-}
-if($p === 'reference'){
-    include('./pages/reference.php');
-}
-if($p === 'auteur'){
-    include('./pages/auteur.php');
-}
 if($p === 'recherche'){
     include('./pages/recherche.php');
 }
