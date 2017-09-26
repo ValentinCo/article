@@ -6,11 +6,13 @@
 #------------------------------------------------------------
 # Table: Comments
 #------------------------------------------------------------
-
+drop database if exists article;
+create database article;
+Use article;
 CREATE TABLE Comments(
         com_id      int (11) Auto_increment  NOT NULL ,
         com_content Varchar (255) ,
-        use_id      Int NOT NULL ,
+        com_pseudo  varchar(45) ,
         boo_id      Int NOT NULL ,
         PRIMARY KEY (com_id )
 )ENGINE=InnoDB;
@@ -19,7 +21,6 @@ CREATE TABLE Comments(
 #------------------------------------------------------------
 # Table: Users
 #------------------------------------------------------------
-
 CREATE TABLE Users(
         use_id       int (11) Auto_increment  NOT NULL ,
         use_name     Varchar (25) NOT NULL ,
@@ -32,15 +33,14 @@ CREATE TABLE Users(
 #------------------------------------------------------------
 # Table: Books
 #------------------------------------------------------------
-
 CREATE TABLE Books(
         boo_id      int (11) Auto_increment  NOT NULL ,
-        boo_title   Varchar (25) NOT NULL ,
+        boo_author varchar(45) NOT NULL,
+        boo_title   Varchar (100) NOT NULL ,
         boo_date    Date NOT NULL ,
-        boo_content Varchar (255) NOT NULL ,
+        boo_content text NOT NULL ,
         boo_type    Varchar (25) NOT NULL ,
         PRIMARY KEY (boo_id )
 )ENGINE=InnoDB;
 
-ALTER TABLE Comments ADD CONSTRAINT FK_Comments_use_id FOREIGN KEY (use_id) REFERENCES Users(use_id);
 ALTER TABLE Comments ADD CONSTRAINT FK_Comments_boo_id FOREIGN KEY (boo_id) REFERENCES Books(boo_id);
