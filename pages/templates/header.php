@@ -10,7 +10,8 @@
       <?php
         if(isset($_SESSION['use_name'])){
           ?>
-        <li><a href='?p=moderation'>Modération</a></li>";
+        <li><a href='?p=moderation'>Modération</a></li>
+        <li><a href='?p=disconnect&'>Disconnect</a></li>
         <?php
         };
       ?>

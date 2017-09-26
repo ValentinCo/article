@@ -35,7 +35,7 @@ while  ($donnees = $reponse->fetch()){
 ?>
 <p>
 <td><?=$donnees['boo_id']?> </td>
-<td><a href=""><?=$donnees['boo_title']?></a></td>
+<td><a href="?p=details&id=<?=  $donnees['boo_id']?>"><?=$donnees['boo_title']?></a></td>
 <td><?=$donnees['boo_type']?> </td>
 <td><?=$donnees['boo_date']?> </td>
 <td><?=$donnees['boo_author']?> </td>

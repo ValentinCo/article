@@ -13,8 +13,9 @@
         if($password === $row['use_password']) {
             $_SESSION['use_name'] = $pseudo;
             $_SESSION['use_id'] = $row['use_id'];
+            header('refresh:2; ?p=livre')
             ?>
-            <h3 class="text-center text-success">---Welcom Master!---</h3>;
+            <h3 class="text-center text-success">---Welcome Master!---</h3>;
             <?php
         } else {
             ?>

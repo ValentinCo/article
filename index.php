@@ -25,6 +25,9 @@ if($p === 'recherche'){
 if($p === 'moderation'){
     include('./pages/moderation.php');
 }
+if($p === 'disconnect'){
+    include('./pages/disconnect.php');
+}
 $content = ob_get_clean();
 include('./pages/templates/default.php');
 ?>
