@@ -28,6 +28,9 @@ if($p === 'moderation'){
 if($p === 'disconnect'){
     include('./pages/disconnect.php');
 }
+if($p === 'supression'){
+    include('./pages/supression.php');
+}
 $content = ob_get_clean();
 include('./pages/templates/default.php');
 ?>

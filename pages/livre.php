@@ -16,7 +16,7 @@ $reponse = $bdd->query("SELECT * FROM Books". $test);
 
 <div class="container">
 
-<table class="table table-bordered">
+<table class="table table-bordered text-center">
     <thead>
     <tr>
         <th><a href="?p=livre&tri=boo_id">Référence</a></th>
