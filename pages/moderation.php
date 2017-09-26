@@ -90,7 +90,7 @@ $reponse->closeCursor();
           </div>
           <div class="form-group">
             <label for="recipient-name"  class="form-control-label" required>Date:</label>
-            <input type="text" name="date" placeholder="Ex: 01-12-2017" class="form-control" id="recipient-name">
+            <input type="text" name="date" placeholder="Ex:2017-01-12" class="form-control" id="recipient-name">
           </div>
           <div class="form-group">
             <label for="recipient-name" class="form-control-label" required>Genre:</label>
