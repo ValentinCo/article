@@ -31,6 +31,9 @@ if($p === 'disconnect'){
 if($p === 'supression'){
     include('./pages/supression.php');
 }
+if($p === 'ajout_livre'){
+    include('./pages/ajout_livre.php');
+}
 $content = ob_get_clean();
 include('./pages/templates/default.php');
 ?>
