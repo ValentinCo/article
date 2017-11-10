@@ -7,7 +7,7 @@
 
   $dbConnect = new PDO("pgsql:host=$host port=$port dbname=$db user=$user password=$psswd"); 
   
-  $sql='SELECT * FROM books';
+  $sql='SELECT to_char(boo_date, DD MM YYYY) as date, boo_id, boo_title, boo_author, boo_content, boo_type FROM books';
   $query = $dbConnect->prepare($sql);
   $query->execute();
   $result = $query->fetchAll();
@@ -68,17 +68,5 @@
             </form>
             <!-- End of Login Form -->
         </div>
-    </div>
-    <div>
-        <?php 
-            /* var_dump($result);
-            die(); */
-            foreach ($result as $key => $value):
-            ?>
-                <h1><?=$value['boo_id'];?></h1>
-                <h1><?=$value['boo_title'];?></h1>
-            <?php
-            endforeach;
-            ?>
     </div>
 </div>

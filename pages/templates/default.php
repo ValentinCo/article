@@ -8,16 +8,23 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body class="">
+<body class="text-center">
 
 <h1 class="text-center">Biblio'Media</h1>
 <div class="text-center">
 <p>Qualité  | Quantité  </p>
 </div>
-    <?php include(__DIR__.'/header.php'); ?>
-    <?= $content ?>
-    
-
+    <header>
+        <?php include(__DIR__.'/header.php'); ?>
+    </header>
+    <div class="text-center">
+        <?= $content ?>
+    </div>
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
